@@ -1,0 +1,14 @@
+<h1>ros_skelton_maker</h1>
+<hr>
+
+<%= form_tag(url_for(:action => 'calc'), :remote => true, :name => 'frm' ) do %>
+ <% @str.size.times do |i| %>
+  <h2> <%= @str[i][0] %> <h3>
+  <% (@str[i].size-1).times do |j| %>
+    <input type="text" name=<%= @name[i] %> size="1" value=""> <%= @str[i][j+1] %> <br />
+  <% end %>
+  <hr>
+ <% end %>
+
+ <button class="square_btn" type="submit">Make</button>
+<% end %>
